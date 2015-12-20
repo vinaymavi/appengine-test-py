@@ -56,7 +56,7 @@ class HelloWorldApi(remote.Service):
             Greeting,
             times=messages.IntegerField(2, variant=messages.Variant.INT32,
                                         required=True))
-    @endpoints.method(MULTIPLY_METHOD_RESOURCE,Greeting,name='greetings.multiply',http_method='POST')
+    @endpoints.method(MULTIPLY_METHOD_RESOURCE,Greeting,http_method='POST')
     def greetings_multily(self, request):
         request
         return Greeting(message=request.message * request.times)
