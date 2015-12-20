@@ -42,7 +42,7 @@ class HelloWorldApi(remote.Service):
 
   ID_RESOURCE = endpoints.ResourceContainer(
       message_types.VoidMessage,
-      id=messages.IntegerField(1, variant=messages.Variant.INT32))
+      id=messages.IntegerField(1, variant=messages.Variant.INT32,required=True))
 
   @endpoints.method(ID_RESOURCE, Greeting,
                     path='hellogreeting/{id}', http_method='GET',
